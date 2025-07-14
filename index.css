@@ -70,7 +70,7 @@ body {
 }
 
 .select-tile {
-  background-color: rgba(22, 59, 75, 0.2);  /* darker blue */
+  background-color: rgba(22, 59, 75, 0.5);  /* darker blue */
 }
 .same-number {
   background-color: rgba(11, 62, 82, 0.5);
