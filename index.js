@@ -30,24 +30,24 @@ const solution = [
 ];
 
 window.onload = (() => {
-    for (let i = 0; i < 9; i++) {
-        for (let j = 0; j < 9; j++) {
+    for(let i = 0; i < 9; i++){
+        for(let j = 0; j < 9; j++){
             const div = document.createElement("div");
             div.classList.add("tile");
             div.addEventListener("click", selectTile);
             div.setAttribute("row", i);
             div.setAttribute("col", j);
 
-            if (puzzel[i][j] != "-") {
+            if(puzzel[i][j] != "-"){
                 div.innerText = puzzel[i][j];
                 div.classList.add("filled");
             }
 
-            if (i == 2 || i == 5) {
+            if(i == 2 || i == 5){
                 div.classList.add("border-bottom");
             }
 
-            if (j == 2 || j == 5) {
+            if(j == 2 || j == 5){
                 div.classList.add("border-right");
             }
 
@@ -55,7 +55,7 @@ window.onload = (() => {
         }
     }
 
-    for (let i = 0; i < 9; i++) {
+    for(let i = 0; i < 9; i++){
         const div = document.createElement("div");
         div.classList.add("tile");
         div.addEventListener("click", addNumber);
@@ -89,12 +89,12 @@ function selectTile() {
             Math.floor(row / 3) === Math.floor(selectedRow / 3) &&
             Math.floor(col / 3) === Math.floor(selectedCol / 3);
 
-        if (sameRowOrCol || sameBox) {
+        if(sameRowOrCol || sameBox){
             tile.classList.add("related-tile");
         }
 
         // Highlight same numbers
-        if (selectedValue !== "" && tile.innerText === selectedValue) {
+        if(selectedValue !== "" && tile.innerText === selectedValue){
             tile.classList.add("same-number");
         }
     });
@@ -127,8 +127,6 @@ function addNumber() {
                 num++;
             }
         }
-
-        // ✅ FIXED TYPO: changed "dander" to "danger"
         let dangerClass = [...allTiles].some((tile) => {
             return tile.classList.contains("danger");
         });
