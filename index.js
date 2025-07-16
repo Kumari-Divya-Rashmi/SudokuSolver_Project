@@ -152,7 +152,7 @@ function addErrorAndDisplay() {
     error++;
     mistake.innerText = error;
     if(error > 2){
-        alert("You Lost!");
+        alert("Try again");
         location.reload();
     }
 }
